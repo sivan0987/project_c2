@@ -1,22 +1,26 @@
-
-
-
+#include <stdio.h>
+#include "my_mat.h"
+#include <string.h>
 #include <stdlib.h>
-#define N 10
-
-int main(){ 
-    char ch;
-    scanf("%c",&ch);
-    while(ch != 'D'){
-        if(ch =='A')
-        a();
-        if(ch == 'B')
-        b();
-        if(ch == 'C')
-        {
-         c();  
-        }  
-    scanf("%c",&ch);
+int main()
+{
+char a;
+scanf("%c",  &a);
+while (a!='D')
+{
+    if(a=='A'){
+      A();
     }
-    return 0;
+    if(a=='B'){
+        B();
+    }
+    if(a=='C'){
+        int answer =C();
+        printf("%d \n", answer);
+       
+    }
+    scanf("%c",  &a);
+
+}
+return 0;
 }
