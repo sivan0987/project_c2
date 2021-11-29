@@ -46,7 +46,7 @@ return -1;
  return a[x][y];
 }
 // // // ***** function B *****
-void b()
+void B()
 {
     int i,j;
     scanf("%d",&i);
@@ -56,7 +56,7 @@ void b()
     else
        printf("False\n");
 }
-void c()
+void C()
 {
    int i,j;
     scanf("%d",&i);

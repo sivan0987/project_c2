@@ -2,6 +2,6 @@ int mat[10][10];
 
 void A();
 
-void b();
+void B();
 
-void c();
+void C();

@@ -12,10 +12,10 @@ int main(){
         if(ch =='A')
         A();
         if(ch == 'B')
-        b();
+        B();
         if(ch == 'C')
         {
-         c();  
+         C();  
         }  
     scanf("%c",&ch);
     }
