@@ -2,27 +2,27 @@
 #include <math.h>
 #include <string.h>
 #include "my_mat.h"
+#define size 10
 #include <stdlib.h>
 #define size 10
 
-void  a(){
-int x=0;
-for (int i = 0; i < size; i++)
-{for (int j = 0; j < size; j++)
+void  A(){
+    int num=0;
+    for (int i = 0; i < size; i++){
+      for (int j = 0; j < size; j++)
     {
-        scanf("%d ",&x);
-        mat[i][j]=x;
+        scanf("%d ",&num);
+        mat[i][j]=num;
     }
 }
 }
 int temp(int x, int y){
     int mat2[size][size];
-    for (int i = 0; i < size; i++)
-    {
-        for(int j = 0; j < size; j++)
-        {
+    for (int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+
             mat2[i][j] = mat[i][j];
-            if(i!=j&&mat2[i][j]==0)
+            if(i != j && mat2[i][j] == 0)
             {
                 mat2[i][j]=99999999;
             }
@@ -43,7 +43,7 @@ return -1;
  return mat2[x][y];
 }
 
-void b()
+void B()
 {
     int i,j;
     scanf("%d",&i);
@@ -53,7 +53,7 @@ void b()
     else
        printf("False\n");
 }
-void c()
+void C()
 {
    int i,j;
     scanf("%d",&i);
