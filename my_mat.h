@@ -4,4 +4,4 @@ void A ();
 /**/
 void B();
 /**/
-int C ();
+void C ();

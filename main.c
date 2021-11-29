@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-
 int main()
 {
 char a;
@@ -15,8 +14,7 @@ while (a!='D')
         B();
     }
     if(a=='C'){
-        int answer =C();
-        printf("%d \n", answer);
+        C();
        
     }
     scanf("%c",  &a);
