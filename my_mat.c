@@ -30,18 +30,22 @@ int temp(int x, int y){
             //  a[i][j]=0;
         }   
     }
-    if(a[x][y]==0){
-        for (int k = 0; k < N; k++) {
-    for (int i = 0; i < N; i++) {
-      for (int j = 0; j < N; j++) {
-        if (a[i][k] + a[k][j] > a[i][j]){
-            a[i][j] = a[i][k] + a[k][j];
-    }}}}}
+    
    for (int k = 0; k < N; k++) {
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
-        if (a[i][k] + a[k][j] < a[i][j]){
-            a[i][j] = a[i][k] + a[k][j];
+          int g=a[i][k] + a[k][j];
+          int f=a[i][j];
+          if(g==0 && f!=0) {
+    			a[i][j]=f;
+    			  }
+           if(f==0 && g!=0) {
+    				  a[i][j]=g;
+    			  }
+                if(g < f) {
+    				a[i][j] = a[i][k] + a[k][j];
+    			  }       
+       
             
       }
       }
