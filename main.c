@@ -10,7 +10,7 @@ int main(){
     scanf("%c",&ch);
     while(ch != 'D'){
         if(ch =='A')
-        a();
+        A();
         if(ch == 'B')
         b();
         if(ch == 'C')

@@ -1,6 +1,6 @@
 int mat[10][10];
 
-void a();
+void A();
 
 void b();
 

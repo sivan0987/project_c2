@@ -6,7 +6,7 @@
 #define N 10
 
 // ***** function A *****
-void  a()
+void  A()
 {
 int x=0;
 for (int i = 0; i < N; i++)
