@@ -2,6 +2,7 @@
 #include "my_mat.h"
 #include <string.h>
 #include <stdlib.h>
+
 int main()
 {
 char a;

@@ -3,18 +3,6 @@
 #include "my_mat.h"
 int mat[siz][siz];
 
-int min(int x, int y){
-    if(x==0 && y==0)
-        return 0;
-    if(x==0)
-        return y;
-    if(y==0)
-        return y;
-    if(x<y)
-        return x;
-    return y;
-}
-
 void A ( ){
     int num;
     for(int k=0 ; k<siz ; k++){
@@ -24,60 +12,35 @@ void A ( ){
         }
     }
 }
-
+int temp(int i , int j){
+    int mat2[10][10];
+    for (int k = 0; k < siz; k++) {
+    for (int i = 0; i < siz; i++) {
+      for (int j = 0; j < siz; j++) {
+        if (mat[i][k] + mat[k][j] < mat[i][j]){
+                if(mat[i][k] + mat[k][j] !=0 ){
+                       mat2[i][j] = mat[i][k] + mat[k][j];}
+                       }
+      }}}
+    if(mat2[i][j]==0)return -1;
+    return mat2[i][j];
+}
 int C (){
-    int mat2[siz][siz];
-    int g,h;
-    scanf("%d", &h);
-    scanf("%d", &g);
-    for (int k = 0; k <=siz; k++) {
-		for (int i = 0; i < siz ; i++) {
-			for (int j = 0; j < siz ; j++) {
-				int x=mat[i][j];
-				int y=mat[i][k]+mat[k][j];
-                if(x==0 && y!=0 ){
-                   mat2[i][j]=y;
-                   }
-                if(y==0&& x!=0){
-                  mat2[i][j]=x;
-                }
-                else{
-                    if(y<x)
-				        mat2[i][j]=y;
-                        else{
-                            mat2[i][j]=x;
-                        }}}}}
-    if(mat2[h][g] == 0)
-            return -1;
-    return mat2[h][g];
-    
+    int i,j;
+    scanf("%d", &i);
+    scanf("%d", &j);
+    int ans = temp(i,j);
+    return ans;
+
 }
 void B(){
-int mat2[siz][siz];
-    int g,h;
-    scanf("%d", &h);
-    scanf("%d", &g);
-
-    for (int k = 0; k <=siz; k++) {
-		for (int i = 0; i < siz ; i++) {
-			for (int j = 0; j < siz ; j++) {
-				int x=mat[i][j];
-				int y=mat[i][k]+mat[k][j];
-                if(y<x)
-				    mat2[i][j]=y;
-
-				
-			}
-		}
-	}
-    if(mat2[g][h]==0)
-        printf("False \n");
-    printf("True \n");
+    int i,j;
+    scanf("%d", &i);
+    scanf("%d", &j);
+    int ans=temp(i,j);
+    if(ans==-1)
+        printf("False\n");
+    else
+        printf("True\n");
 }
-// int main(){
-//     A();
-//     int s=C();
-//     printf("%d", s);
-//     return 0;
-// }
 
