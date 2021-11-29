@@ -2,62 +2,65 @@
 #include <math.h>
 #include <string.h>
 #include "my_mat.h"
-#define size 10
 #include <stdlib.h>
-#define size 10
+#define N 10
 
-void  A(){
-    int num=0;
-    for (int i = 0; i < size; i++){
-      for (int j = 0; j < size; j++)
+// ***** function A *****
+void  a()
+{
+int x=0;
+for (int i = 0; i < N; i++)
+{
+    for (int j = 0; j < N; j++)
     {
-        scanf("%d ",&num);
-        mat[i][j]=num;
+        scanf("%d ",&x);
+        mat[i][j]=x;
     }
 }
 }
-int temp(int x, int y){
-    int mat2[size][size];
-    for (int i = 0; i < size; i++){
-        for(int j = 0; j < size; j++){
-
-            mat2[i][j] = mat[i][j];
-            if(i != j && mat2[i][j]==0)
+int C_help(int x, int y){
+    int a[N][N];
+    for (int i = 0; i < N; i++)
+    {
+        for(int j = 0; j < N; j++)
+        {
+            a[i][j] = mat[i][j];
+            if(i!=j&&a[i][j]==0)
             {
-                mat2[i][j]=99999999;
+                a[i][j]=999999;
             }
             else if(i==j)
-             mat2[i][j]=0;
+             a[i][j]=0;
         }   
     }
-   for (int k = 0; k < size; k++) {
-    for (int i = 0; i < size; i++) {
-      for (int j = 0; j < size; j++) {
-        if (mat2[i][k] + mat2[k][j] < mat2[i][j])
-            mat2[i][j] = mat2[i][k] + mat2[k][j];
+   for (int k = 0; k < N; k++) {
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < N; j++) {
+        if (a[i][k] + a[k][j] < a[i][j])
+            a[i][j] = a[i][k] + a[k][j];
       }
     }
   }
-if (mat2[x][y]==0 || mat2[x][y]>=99999999)
+if (a[x][y]==0 || a[x][y]>=999999)
 return -1;
- return mat2[x][y];
+ return a[x][y];
 }
-
-void B()
+// // // ***** function B *****
+void b()
 {
     int i,j;
     scanf("%d",&i);
     scanf("%d",&j);
-    if(temp(i,j)!=-1 )
+    if(C_help(i,j)!=-1 )
        printf("True\n");  
     else
        printf("False\n");
 }
-void C()
+void c()
 {
    int i,j;
     scanf("%d",&i);
     scanf("%d",&j);
-     int a = temp(i,j);
+     int a = C_help(i,j);
      printf("%d\n",a);
 }
