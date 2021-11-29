@@ -15,7 +15,6 @@ while (a!='D')
     }
     if(a=='C'){
         c();
-       
     }
     scanf("%c",  &a);
 
