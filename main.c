@@ -8,13 +8,13 @@ scanf("%c",  &a);
 while (a!='D')
 {
     if(a=='A'){
-      A();
+      a();
     }
     if(a=='B'){
-        B();
+        b();
     }
     if(a=='C'){
-        C();
+        c();
        
     }
     scanf("%c",  &a);

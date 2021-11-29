@@ -1,7 +1,7 @@
 
 /**/
-void A ();
+void a();
 /**/
-void B();
+void b();
 /**/
-void C ();
+void c ();
