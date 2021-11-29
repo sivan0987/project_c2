@@ -18,6 +18,8 @@ for (int i = 0; i < N; i++)
 }
 int temp(int x, int y){
     int a[N][N];
+    int g;
+    int f;
     for (int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){
 
@@ -34,8 +36,8 @@ int temp(int x, int y){
    for (int k = 0; k < N; k++) {
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
-          int g=a[i][k] + a[k][j];
-          int f=a[i][j];
+           g=a[i][k] + a[k][j];
+           f=a[i][j];
           if(g==0 && f!=0) {
     			a[i][j]=f;
     			  }
@@ -45,8 +47,6 @@ int temp(int x, int y){
                 if(g < f) {
     				a[i][j] = a[i][k] + a[k][j];
     			  }       
-       
-            
       }
       }
     }
