@@ -22,12 +22,12 @@ int temp(int x, int y){
         for(int j = 0; j < N; j++){
 
             a[i][j] = mat[i][j];
-            // if(i!=j&&a[i][j]==0)
-            // {
-            //     a[i][j]=999999;
-            // }
-            // else if(i==j)
-            //  a[i][j]=0;
+            if(i!=j&&a[i][j]==0)
+            {
+                a[i][j]=999999;
+            }
+            else if(i==j)
+             a[i][j]=0;
         }   
     }
    for (int k = 0; k < N; k++) {
@@ -44,7 +44,7 @@ int temp(int x, int y){
     }
   }
   //|| a[x][y]>=999999
-if (a[x][y]==0 )
+if (a[x][y]==0 || a[x][y]>=999999)
 return -1;
  return a[x][y];
 }
