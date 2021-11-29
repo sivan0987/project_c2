@@ -18,17 +18,16 @@ for (int i = 0; i < N; i++)
 }
 int temp(int x, int y){
     int a[N][N];
-    for (int i = 0; i < N; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
+    for (int i = 0; i < N; i++){
+        for(int j = 0; j < N; j++){
+
             a[i][j] = mat[i][j];
-            if(i!=j&&a[i][j]==0)
-            {
-                a[i][j]=999999;
-            }
-            else if(i==j)
-             a[i][j]=0;
+            // if(i!=j&&a[i][j]==0)
+            // {
+            //     a[i][j]=999999;
+            // }
+            // else if(i==j)
+            //  a[i][j]=0;
         }   
     }
    for (int k = 0; k < N; k++) {
