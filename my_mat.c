@@ -22,7 +22,7 @@ int temp(int x, int y){
         for(int j = 0; j < size; j++){
 
             mat2[i][j] = mat[i][j];
-            if(i != j && mat2[i][j] == 0)
+            if(i != j && mat2[i][j]==0)
             {
                 mat2[i][j]=99999999;
             }
