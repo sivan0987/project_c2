@@ -43,7 +43,8 @@ int temp(int x, int y){
       }
     }
   }
-if (a[x][y]==0 || a[x][y]>=999999)
+  //|| a[x][y]>=999999
+if (a[x][y]==0 )
 return -1;
  return a[x][y];
 }
