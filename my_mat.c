@@ -3,55 +3,52 @@
 #include <string.h>
 #include "my_mat.h"
 #include <stdlib.h>
-#define N 10
+#define size 10
 
-// ***** function A *****
-void  a()
-{
+void  a(){
 int x=0;
-for (int i = 0; i < N; i++)
-{
-    for (int j = 0; j < N; j++)
+for (int i = 0; i < size; i++)
+{for (int j = 0; j < size; j++)
     {
         scanf("%d ",&x);
         mat[i][j]=x;
     }
 }
 }
-int C_help(int x, int y){
-    int a[N][N];
-    for (int i = 0; i < N; i++)
+int temp(int x, int y){
+    int mat2[size][size];
+    for (int i = 0; i < size; i++)
     {
-        for(int j = 0; j < N; j++)
+        for(int j = 0; j < size; j++)
         {
-            a[i][j] = mat[i][j];
-            if(i!=j&&a[i][j]==0)
+            mat2[i][j] = mat[i][j];
+            if(i!=j&&mat2[i][j]==0)
             {
-                a[i][j]=999999;
+                mat2[i][j]=99999999;
             }
             else if(i==j)
-             a[i][j]=0;
+             mat2[i][j]=0;
         }   
     }
-   for (int k = 0; k < N; k++) {
-    for (int i = 0; i < N; i++) {
-      for (int j = 0; j < N; j++) {
-        if (a[i][k] + a[k][j] < a[i][j])
-            a[i][j] = a[i][k] + a[k][j];
+   for (int k = 0; k < size; k++) {
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        if (mat2[i][k] + mat2[k][j] < mat2[i][j])
+            mat2[i][j] = mat2[i][k] + mat2[k][j];
       }
     }
   }
-if (a[x][y]==0 || a[x][y]>=999999)
+if (mat2[x][y]==0 || mat2[x][y]>=99999999)
 return -1;
- return a[x][y];
+ return mat2[x][y];
 }
-// // // ***** function B *****
+
 void b()
 {
     int i,j;
     scanf("%d",&i);
     scanf("%d",&j);
-    if(C_help(i,j)!=-1 )
+    if(temp(i,j)!=-1 )
        printf("True\n");  
     else
        printf("False\n");
@@ -61,6 +58,6 @@ void c()
    int i,j;
     scanf("%d",&i);
     scanf("%d",&j);
-     int a = C_help(i,j);
+     int a = temp(i,j);
      printf("%d\n",a);
 }
