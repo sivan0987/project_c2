@@ -4,7 +4,7 @@
 #include "my_mat.h"
 #include <stdlib.h>
 #define N 10
-
+#define MIN(a,b) (((a)<(b))?(a):(b))
 // ***** function A *****
 void  a()
 {
@@ -25,19 +25,23 @@ int C_help(int x, int y){
         for(int j = 0; j < N; j++)
         {
             a[i][j] = mat[i][j];
-            if(i!=j&&a[i][j]==0)
-            {
-                a[i][j]=999999;
-            }
-            else if(i==j)
-             a[i][j]=0;
+            // if(i!=j&&a[i][j]==0)
+            // {
+            //     a[i][j]=999999;
+            // }
+            // else if(i==j)
+            //  a[i][j]=0;
         }   
     }
    for (int k = 0; k < N; k++) {
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
-        if (a[i][k] + a[k][j] < a[i][j])
-            a[i][j] = a[i][k] + a[k][j];
+        if(a[i][j]!=0 && a[i][k]!=0 && a[k][j]!=0){
+                    a[i][j]=MIN(a[i][j],a[i][k]+a[k][j]);
+                }
+                if(i!=j && a[i][j]==0 && a[i][k]!=0 && a[k][j]!=0){
+                    a[i][j]=a[i][k]+a[k][j];
+                }
       }
     }
   }
