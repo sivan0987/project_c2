@@ -10,14 +10,14 @@ int main(){
     scanf("%c",&ch);
     while(ch != 'D'){
         if(ch =='A')
-        A();
+        a();
         if(ch == 'B')
-        B();
+        b();
         if(ch == 'C')
         {
-         C();  
+         c();  
         }  
     scanf("%c",&ch);
     }
-    return 0;
+    return 1;
 }
