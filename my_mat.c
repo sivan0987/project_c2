@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #define N 10
 #define MIN(a,b) (((a)<(b))?(a):(b))
-// ***** function A *****
-void  a()
+
+void  A()
 {
 int x=0;
 for (int i = 0; i < N; i++)
@@ -18,7 +18,7 @@ for (int i = 0; i < N; i++)
     }
 }
 }
-int C_help(int x, int y){
+int temp(int x, int y){
     int a[N][N];
     for (int i = 0; i < N; i++)
     {
@@ -45,26 +45,27 @@ int C_help(int x, int y){
       }
     }
   }
-if (a[x][y]==0 || a[x][y]>=999999)
+  //|| a[x][y]>=999999
+if (a[x][y]==0 )
 return -1;
  return a[x][y];
 }
-// // // ***** function B *****
-void b()
+
+void B()
 {
     int i,j;
     scanf("%d",&i);
     scanf("%d",&j);
-    if(C_help(i,j)!=-1 )
+    if(temp(i,j)!=-1 )
        printf("True\n");  
     else
        printf("False\n");
 }
-void c()
+void C()
 {
    int i,j;
     scanf("%d",&i);
     scanf("%d",&j);
-     int a = C_help(i,j);
-     printf("%d\n",a);
+     int ans = temp(i,j);
+     printf("%d\n",ans);
 }

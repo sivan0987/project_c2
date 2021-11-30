@@ -10,13 +10,11 @@ int main(){
     scanf("%c",&ch);
     while(ch != 'D'){
         if(ch =='A')
-        a();
+        A();
         if(ch == 'B')
-        b();
+            B();
         if(ch == 'C')
-        {
-         c();  
-        }  
+            C();  
     scanf("%c",&ch);
     }
     return 0;
