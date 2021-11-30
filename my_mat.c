@@ -3,52 +3,42 @@
 #include <string.h>
 #include "my_mat.h"
 #include <stdlib.h>
-#define N 10
+#define size 10
 #define MIN(a,b) (((a)<(b))?(a):(b))
 
-void  A()
-{
+void  A(){
 int x=0;
-for (int i = 0; i < N; i++)
-{
-    for (int j = 0; j < N; j++)
-    {
+for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
         scanf("%d ",&x);
         mat[i][j]=x;
     }
 }
 }
-int temp(int x, int y){
-    int a[N][N];
-    for (int i = 0; i < N; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
-            a[i][j] = mat[i][j];
-            // if(i!=j&&a[i][j]==0)
-            // {
-            //     a[i][j]=999999;
-            // }
-            // else if(i==j)
-            //  a[i][j]=0;
+int temp(int x, int y) {
+    int tempMat[size][size];
+    for (int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            tempMat[i][j] = mat[i][j];
         }   
     }
-   for (int k = 0; k < N; k++) {
-    for (int i = 0; i < N; i++) {
-      for (int j = 0; j < N; j++) {
-        if(a[i][j]!=0 && a[i][k]!=0 && a[k][j]!=0){
-                    a[i][j]=MIN(a[i][j],a[i][k]+a[k][j]);
+
+   for (int k = 0; k < size; k++) {
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        if(tempMat[i][j]!=0 && tempMat[i][k]!=0 && tempMat[k][j]!=0){
+                    tempMat[i][j]=MIN(tempMat[i][j],tempMat[i][k]+tempMat[k][j]);
                 }
-                if(i!=j && a[i][j]==0 && a[i][k]!=0 && a[k][j]!=0){
-                    a[i][j]=a[i][k]+a[k][j];
+        if(i!=j && tempMat[i][j]==0 && tempMat[i][k]!=0 && tempMat[k][j]!=0){
+                    tempMat[i][j]=tempMat[i][k]+tempMat[k][j];
                 }
       }
     }
   }
-  //|| a[x][y]>=999999
-if (a[x][y]==0 )
-return -1;
- return a[x][y];
+  
+    if (tempMat[x][y]==0 )
+        return -1;
+    return tempMat[x][y];
 }
 
 void B()
