@@ -26,12 +26,20 @@ int temp(int x, int y) {
    for (int k = 0; k < size; k++) {
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
+        
         if(tempMat[i][j]!=0 && tempMat[i][k]!=0 && tempMat[k][j]!=0){
                     tempMat[i][j]=MIN(tempMat[i][j],tempMat[i][k]+tempMat[k][j]);
-                }
+          }
+        if(i==j){
+                  tempMat[i][j]=0;
+          }
         if(i!=j && tempMat[i][j]==0 && tempMat[i][k]!=0 && tempMat[k][j]!=0){
                     tempMat[i][j]=tempMat[i][k]+tempMat[k][j];
                 }
+        if(tempMat[i][j]!=0 && tempMat[i][k]==0 && tempMat[k][j]==0){
+          tempMat[i][j]=tempMat[i][j];
+        }
+        
       }
     }
   }
@@ -41,16 +49,7 @@ int temp(int x, int y) {
     return tempMat[x][y];
 }
 
-void B()
-{
-    int i,j;
-    scanf("%d",&i);
-    scanf("%d",&j);
-    if(temp(i,j)!=-1 )
-       printf("True\n");  
-    else
-       printf("False\n");
-}
+
 void C()
 {
    int i,j;
@@ -58,4 +57,13 @@ void C()
     scanf("%d",&j);
      int ans = temp(i,j);
      printf("%d\n",ans);
+}
+void B() {
+    int i,j;
+    scanf("%d",&i);
+    scanf("%d",&j);
+    if(temp(i,j)!=-1 )
+       printf("True\n");  
+    else
+       printf("False\n");
 }
