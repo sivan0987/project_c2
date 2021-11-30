@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "my_mat.h"
 #include <stdlib.h>
-#include <limits.h>
 #define N 10
 
 // ***** function A *****
-#define MIN(a,b) (((a)<(b))?(a):(b))
 void  a()
 {
 int x=0;
@@ -26,28 +25,23 @@ int C_help(int x, int y){
         for(int j = 0; j < N; j++)
         {
             a[i][j] = mat[i][j];
-            // if(i!=j&&a[i][j]==0)
-            // {
-            //     a[i][j]=999999;
-            // }
-            // else if(i==j)
-            //  a[i][j]=0;
+            if(i!=j&&a[i][j]==0)
+            {
+                a[i][j]=999999;
+            }
+            else if(i==j)
+             a[i][j]=0;
         }   
     }
    for (int k = 0; k < N; k++) {
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
-        if(a[i][j]!=0 && a[i][k]!=0 && a[k][j]!=0){
-                    a[i][j]=MIN(a[i][j],a[i][k]+a[k][j]);
-                }
-                if(i!=j && a[i][j]==0 && a[i][k]!=0 && a[k][j]!=0){
-                    a[i][j]=a[i][k]+a[k][j];
-                }
+        if (a[i][k] + a[k][j] < a[i][j])
+            a[i][j] = a[i][k] + a[k][j];
       }
     }
   }
-  //|| a[x][y]>=999999
-if (a[x][y]==0 )
+if (a[x][y]==0 || a[x][y]>=999999)
 return -1;
  return a[x][y];
 }

@@ -19,5 +19,5 @@ int main(){
         }  
     scanf("%c",&ch);
     }
-    return 1;
+    return 0;
 }
